@@ -15,10 +15,37 @@ body {
   text-align: center;
 }
 
+.container-exchange {
+  background-color: #FFFFFF; /* Fondo del contenedor */
+  color: #333333; /* Color del texto dentro del contenedor */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
 h1 {
   margin-bottom: 20px;
   font-family: 'Montserrat', sans-serif;
 }
+
+/* table {
+  width: 100%;
+  border-collapse: collapse;
+} */
+
+/* table, th, td {
+  border: 1px solid #ddd;
+}
+
+th, td {
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  background-color: #f4f4f4;
+} */
 
 .button {
   background-color: #00CC44; /* Color del botón */
