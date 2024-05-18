@@ -178,6 +178,6 @@ const exchangeRates = {
 };
 
 // Mostrar las tasas de cambio en el HTML
-document.getElementById('eur-rate').innerText = exchangeRates.rates.EUR;
-document.getElementById('cop-rate').innerText = exchangeRates.rates.COP;
-document.getElementById('ves-rate').innerText = exchangeRates.rates.VES;
+document.getElementById('eur-rate').innerText = exchangeRates.rates.EUR.toFixed(2);
+document.getElementById('cop-rate').innerText = exchangeRates.rates.COP.toFixed(2);
+document.getElementById('ves-rate').innerText = exchangeRates.rates.VES.toFixed(2);
