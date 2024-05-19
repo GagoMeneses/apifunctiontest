@@ -25,6 +25,7 @@ exports.fetchExchangeRates = functions.https.onRequest(
           const apiResponse = await axios.get(apiUrl, {
             params: {
               app_id: appId,
+              show_alternative: 1,
             },
           });
           const data = {

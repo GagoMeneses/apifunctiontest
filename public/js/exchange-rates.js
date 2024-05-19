@@ -181,3 +181,7 @@ const exchangeRates = {
 document.getElementById('eur-rate').innerText = exchangeRates.rates.EUR.toFixed(2);
 document.getElementById('cop-rate').innerText = exchangeRates.rates.COP.toFixed(2);
 document.getElementById('ves-rate').innerText = exchangeRates.rates.VES.toFixed(2);
+
+
+
+
