@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="/manifest.json">
+
+    <script src="./src/numeralMin.js"></script>
+
+
+</head>
+<body>
+    <div class="container">
+        <div class="container2">
+            <h3>&#x2193;Desliza para reiniciar&#x2193;</h3>
+            <a href="../index.html" class="button-secondary">Volver</a>
+            <div id="cambios-container" id="exchangeSource">
+                <div id="exchangeRate" class="toggle-button">Cargando tasa...</div>
+                <div id="paralelRate" class="toggle-button">Cargando tasa...</div>
+            </div>
+            <h3>cambios actualizados el dia 09-05-2024 a las 14:05 by BCV & Openexchange</h3>
+        </div>  
+
+
+        <div class="exchange-type">
+            <h2>Tipo de cambio</h2>
+            <select class="exchangeSource" id="exchangeSource">
+              <option value="BCV" selected>BCV </option>
+              <option value="Paralelo">Paralelo</option>
+            </select>
+          </div>
+
+        <div class="container">
+          <div>
+              <h1>Calcula tu vuelto</h1>
+              <h2>¿Cuanto vas a pagar?</h2>
+              <div class="total-amount">
+                <input type="number" id="totalAmountToPay" placeholder="Monto Total a pagar">
+                <select id="currencyToPay">
+                    <option value="USD"> Dólares 🇺🇸</option>
+                    <option value="EUR">Euros 🇪🇺</option>
+                    <option value="Bs">Bolívares 🇻🇪</option>
+                    <option value="COP">Pesos 🇨🇴</option>
+                </select>
+              </div>
+          </div>
+
+          <!-- este es el que muestra los resultados dinamicos son/completa con -->
+          <div id="experimento">
+            <p id="resultUSD" class="pEmergentes"></p>
+            <p id="resultEUR" class="pEmergentes"></p>
+            <p id="resultBs" class="pEmergentes"> </p>
+            <p id="resultCOP" class="pEmergentes"></p>
+
+          </div>
+
+          <div>
+        <div>
+            <h2>¿Con cuanto vas a pagar?</h2>
+            <div class="payment-section">
+                <input type="number" id="amountUSD" placeholder="Monto en USD">
+                <input type="checkbox" id="payWithUSD" name="paymentCurrency" value="USD">
+                <label for="payWithUSD" class="nextPlaceholderText"> &#36; DOLARES</label>
+                
+            </div>
+            <div class="payment-section">
+                <input type="number" id="amountEUR" placeholder="Monto en EUR">
+                <input type="checkbox" id="payWithEUR" name="paymentCurrency" value="EUR">
+                <label for="payWithEUR" class="nextPlaceholderText">&#8364; EUROS</label>
+                
+            </div>
+            <div class="payment-section">
+                <input type="number" id="amountBs" placeholder="Monto en Bs">
+                <input type="checkbox" id="payWithBs" name="paymentCurrency" value="Bs">
+                <label for="payWithBsBCV" class="nextPlaceholderText">Bs. BOLIVARES</label>
+                
+            </div>
+            <div class="payment-section">
+                <input type="number" id="amountCOP" placeholder="Monto en COP">
+                <input type="checkbox" id="payWithCOP" name="paymentCurrency" value="COP">
+                <label for="payWithCOP" class="nextPlaceholderText">&#36; PESOS</label>
+                
+            </div>
+        </div>
+        <div>
+            <h2>Tu cambio en:</h2>
+            <div class="radio-buttons-container">
+                <div class="btnChanged">
+                    <input type="radio" id="changeInUSD" name="changeCurrency" value="USD" checked>
+                    <label for="changeInUSD">Dólares</label>
+                </div>
+                <div class="btnChanged">
+                    <input type="radio" id="changeInEUR" name="changeCurrency" value="EUR">
+                    <label for="changeInEUR">Euros</label>
+                </div>
+                <div class="btnChanged">
+                    <input type="radio" id="changeInBs" name="changeCurrency" value="Bs">
+                    <label for="changeInBs">Bolívares</label>
+                </div>
+                <div class="btnChanged">
+                    <input type="radio" id="changeInCOP" name="changeCurrency" value="COP">
+                    <label for="changeInCOP">Pesos</label>
+                </div>
+            </div>
+            
+        </div>
+    
+        <div id="result"></div>
+
+        
+
+        <!-- Interruptor Toggle para mostrar/ocultar opciones que por aluna razon es imporatente no tocar -->
+        <label class="switch">
+            <input type="checkbox" id="toggleSwitch">
+            <span class="slider round"></span>
+        </label>
+    </div>
+
+
+
+    <!-- <script src="exchangeRates.js"></script> -->
+    <!-- <script src="exchangeSources.js"></script> -->
+    <script type="module" src="exchangeSources.js"></script>
+    <!-- <script src="exchangeSources.mjs"></script> -->
+    <!-- <script src="./server.js"></script> -->
+    <script type="module" src="script.js"></script>
+    <script type="module" src="./updateAmountsNeeded.js"></script>
+    <script src="./mostrarCambioBCV.js" ></script>
+    <script src="./mostrarCambioParalelo.js" ></script>
+    <script src="./resultDramatico.js"></script>
+
+    <script src="./showDinamicChange.js" ></script>
+
+   
+
+    <script src="./botonElegirCambio.js" ></script>
+    <script src="./selecionaElBotomBCV.js" ></script>
+
+    <!-- los siguientes dos pajuos hacen lo mismo -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/locales/de.min.js"></script> -->
+    <script src="./src/localesDeMi.js"></script>
+
+    
+</body>
+</html>
