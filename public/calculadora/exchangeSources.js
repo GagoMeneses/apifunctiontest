@@ -1,11 +1,41 @@
+import { fetchExchangeRates } from '../../functions/index';
+// Init firebase
+const admin = require("firebase-admin");
+if (!admin.apps.length) {
+  admin.initializeApp();
+}
+const db = admin.firestore();
 
+// firebase retrieve
+async function getExchangeRates() {
+    const cacheDoc = db.collection("exchangeRates").doc("latest");
+    try {
+      const cache = await cacheDoc.get();
+      if (cache.exists) {
+        console.log("Cache data retrieved successfully");
+        return cache.data().rates;
+      } else {
+        console.error("No cache data found");
+        return null;
+      }
+    } catch (error) {
+      console.error("Error retrieving cache data: ", error);
+      return null;
+    }
+  }
+  
+const rates = await getExchangeRates();
+console.log("Cache GPT: ", rates)
 
+const cache = db.collection("exchangeRates").doc("latest");
+console.log("Cache DB: ", cache)
+
+// todo: replace these hardcoded values for the db / cache info.
 const bcvUsdEur = 0.927872;
 const bcvUsdBs = 36.537099;
 const bcvUsdCop = 3897.19;
 
 const paraleloUsdBs = 39.557;
-
 
 const exchangeSources = {
   BCV: {
