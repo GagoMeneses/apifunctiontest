@@ -1,30 +1,6 @@
-///////////funcion de calculo dinamico para calcular lo que falta para pagar el monto total
-
-<<<<<<< HEAD:public/calculadora2/updateAmountsNeeded.js
-=======
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-app.js";
-import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore.js";
-
-const admin = require("firebase-admin");
-
-admin.initializeApp();
-const db = admin.firestore();
-
-const docRef = doc(db, "rates");
-const docSnap = await getDoc(docRef);
-
-if (docSnap.exists()) {
-  console.log("Document data:", docSnap.data());
-} else {
-  // docSnap.data() will be undefined in this case
-  console.log("No such document!");
-}
-
-
-
->>>>>>> a299b91 (esta pude que si):public/calculadora/updateAmountsNeeded.js
-
 import { exchangeSources } from './exchangeSources.js';
+
+console.log("que verga esta pasando");
 
 let rates = {};  // Variable para almacenar las tasas de cambio actuales según la fuente seleccionada
 
